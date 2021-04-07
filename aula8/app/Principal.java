@@ -10,13 +10,12 @@ import figurasRegulares.Hexagono;
 
 public class Principal {
 
-	/**
-	 * Referencias para as classes Triangulo e Circulo
-	 */
+	// Referencias para as classes Triangulo e Circulo
+	
 	static Circulo circulos[] = new Circulo[0];
 	static Triangulo triangulos[] = new Triangulo[0];
 	static Quadrado quadrados[] = new Quadrado[0];
-	static Pentagono pentagonos[] = new Pentagono[1];
+	static Pentagono pentagonos[] = new Pentagono[0];
 	static Hexagono hexagonos[] = new Hexagono[0];
 
 	
@@ -90,13 +89,12 @@ public class Principal {
 
 
 		case 4: //criar Pentagono
-			String strRaioPentagono = JOptionPane.showInputDialog("Informe o valor do raio");
-			float raioPentagono = Float.parseFloat(strRaioPentagono);
+			
 			String strLadoPentagono = JOptionPane.showInputDialog("Informe o valor do lado do Pentagono:");
 			float ladoPentagono = Float.parseFloat(strLadoPentagono);
 
 			//criar um Pentagono
-			Pentagono p = new Pentagono(raioPentagono,ladoPentagono);
+			Pentagono p = new Pentagono(ladoPentagono);
 
 			//Armazenar p em pentagonos
 			//1o. copiar pentagonos para vetor temporario
@@ -138,14 +136,14 @@ public class Principal {
 		for (int i=0; i<circulos.length; i++) {
 			float area = circulos[i].calcularArea();
 			String resposta = "Circulo "+ i + ": \n"
-					+ "Área = " + area ;
+					+ "Ãrea = " + area ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
 		
 		for (int i=0; i<triangulos.length; i++) {
 			float area = triangulos[i].calcularArea();
 			String resposta = "Triangulo "+ i + ": \n"
-					+ "Área = " + area ;
+					+ "Ãrea = " + area ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
 		
@@ -153,23 +151,21 @@ public class Principal {
 		for (int i=0; i<quadrados.length; i++) {
 			float area = quadrados[i].calcularArea();
 			String resposta = "Quadrado "+ i + ": \n"
-					+ "Área = " + area ;
+					+ "Ãrea = " + area ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
-		return 0;
-
+		
 		for (int i=0; i<pentagonos.length; i++) {
 			float area = pentagonos[i].calcularArea();
 			String resposta = "Pentagono "+ i + ": \n"
-					+ "Área = " + area ;
+					+ "Ãrea = " + area ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
-		return 0;
 
 		for (int i=0; i<hexagonos.length; i++) {
 			float area = hexagonos[i].calcularArea();
 			String resposta = "Hexagono "+ i + ": \n"
-					+ "Área = " + area ;
+					+ "Ãrea = " + area ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
 		return 0;
@@ -198,6 +194,20 @@ public class Principal {
 					+ "Perimetro = " + perimetro ;
 			JOptionPane.showMessageDialog(null, resposta);
 		}
+		
+		for (int i=0; i<pentagonos.length; i++) {
+			float perimetro = pentagonos[i].calcularPerimetro();
+			String resposta = "Pentagono "+ i + ": \n"
+					+ "Perimetro = " + perimetro ;
+			JOptionPane.showMessageDialog(null, resposta);
+		}
+		
+		for (int i=0; i<hexagonos.length; i++) {
+			float perimetro = hexagonos[i].calcularPerimetro();
+			String resposta = "Hexagono "+ i + ": \n"
+					+ "Perimetro = " + perimetro ;
+			JOptionPane.showMessageDialog(null, resposta);
+		}
 		return 0;
 	}
 	
@@ -207,7 +217,7 @@ public class Principal {
 		int opcao = 0;
 
 		do {
-			String menu = "Informe a opção desejada: \n"
+			String menu = "Informe a opÃ§Ã£o desejada: \n"
 					+ "1 - Criar figura regular \n"
 					+ "2 - Calcular area de figura regular \n"
 					+ "3 - Calcular perimetro de figura regular \n"
